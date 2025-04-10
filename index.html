@@ -6,68 +6,83 @@
     <title>Base de Datos 2</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #e0f7fa; /* Un celeste muy suave */
-            color: #263238; /* Un azul grisáceo oscuro */
+            background-color: #f0f0f0; /* Gris claro de fondo */
+            color: #333; /* Gris oscuro para el texto general */
             line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
         nav {
-            background-color: #00838f; /* Un turquesa más intenso */
+            background-color: #2c3e50; /* Azul oscuro casi negro */
             color: #fff;
-            padding: 1.2em 2em;
-            display: flex;
-            align-items: center;
-            justify-content: flex-start; /* Alinea el título a la izquierda */
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            padding: 1.5em 2em;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: left; /* Alinea el título a la izquierda */
         }
         nav h1 {
             margin: 0;
-            font-size: 1.8em;
-            font-weight: 400;
+            font-size: 2em;
+            font-weight: 300;
+        }
+
+        .seccion-contenedor {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            width: 90%;
+            max-width: 1200px;
+            margin: 20px 0;
+            padding: 20px;
+        }
+
+        .seccion-titulo-contenedor {
+            background-color: #34495e; /* Azul más oscuro */
+            color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            overflow: hidden;
+            transition: transform 0.2s ease-in-out;
+        }
+
+        .seccion-titulo-contenedor:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.2);
         }
 
         .seccion-titulo {
-            background-color: #b2ebf2; /* Un celeste más claro */
-            padding: 12px 20px;
-            margin: 15px 30px 0 30px;
-            border-radius: 8px 8px 0 0;
-            cursor: pointer;
+            padding: 15px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #00acc1; /* Línea inferior más marcada */
-            transition: background-color 0.3s ease;
-        }
-
-        .seccion-titulo:hover {
-            background-color: #80deea; /* Un celeste al hacer hover */
         }
 
         .seccion-titulo h2 {
-            color: #006064; /* Un turquesa oscuro */
+            color: #fff;
             border-bottom: none;
             padding-bottom: 0;
             margin-bottom: 0;
-            font-size: 1.4em;
+            font-size: 1.6em;
+            font-weight: 400;
         }
 
         .seccion-titulo span {
             font-size: 1.5em;
-            color: #006064;
+            color: #fff;
         }
 
         .seccion-contenido {
+            background-color: #f9f9f9; /* Gris muy claro para el contenido */
             padding: 20px;
-            margin: 0 30px 20px 30px;
-            background-color: #fff;
             border-radius: 0 0 8px 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             display: none;
-            border-left: 1px solid #00acc1;
-            border-right: 1px solid #00acc1;
-            border-bottom: 1px solid #00acc1;
+            color: #555; /* Gris más claro para el texto del contenido */
+            border-top: 1px solid #ddd;
         }
 
         .seccion-contenido.mostrar {
@@ -75,21 +90,21 @@
         }
 
         .seccion-contenido p {
-            color: #455a64; /* Un gris azulado */
             line-height: 1.7;
             margin-bottom: 1em;
         }
 
-        a {
-            color: #00acc1;
+        .seccion-contenido a {
+            color: #2980b9; /* Azul más brillante para los enlaces */
             text-decoration: none;
             font-weight: bold;
         }
 
-        a:hover {
+        .seccion-contenido a:hover {
             text-decoration: underline;
         }
     </style>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -97,62 +112,78 @@
         <h1>Jines Tapia Luis Antonio</h1>
     </nav>
 
-    <div class="seccion-titulo" onclick="toggleSeccion('semana1')">
-        <h2>Semana 1</h2>
-        <span>&#9660;</span>
-    </div>
-    <div class="seccion-contenido" id="semana1">
-        <p><strong>INTRODUCCIÓN A LOS GESTORES DE BASE DE DATOS</strong></p>
-        <p><a href="https://www.canva.com/design/DAGjkU8Vn2Q/rIXllxChn284hN40GA6pyg/edit" target="_blank">Enlace a la presentación</a></p>
-    </div>
+    <div class="seccion-contenedor">
+        <div class="seccion-titulo-contenedor" onclick="toggleSeccion('semana1')">
+            <div class="seccion-titulo">
+                <h2>Semana 1</h2>
+                <span>&#9660;</span>
+            </div>
+            <div class="seccion-contenido" id="semana1">
+                <p><strong>INTRODUCCIÓN A LOS GESTORES DE BASE DE DATOS</strong></p>
+                <p><a href="https://www.canva.com/design/DAGjkU8Vn2Q/rIXllxChn284hN40GA6pyg/edit" target="_blank">Enlace a la presentación</a></p>
+            </div>
+        </div>
 
-    <div class="seccion-titulo" onclick="toggleSeccion('semana2')">
-        <h2>Semana 2</h2>
-        <span>&#9660;</span>
-    </div>
-    <div class="seccion-contenido" id="semana2">
-        <p><strong>DIAGRAMA ENTIDAD RELACIÓN</strong></p>
-        <p><a href="https://www.canva.com/design/DAGjl6x7yzQ/6tFINnVkrSlN-jZwtJae1Q/edit?utm_content=DAGjl6x7yzQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Enlace al diagrama</a></p>
-    </div>
+        <div class="seccion-titulo-contenedor" onclick="toggleSeccion('semana2')">
+            <div class="seccion-titulo">
+                <h2>Semana 2</h2>
+                <span>&#9660;</span>
+            </div>
+            <div class="seccion-contenido" id="semana2">
+                <p><strong>DIAGRAMA ENTIDAD RELACIÓN</strong></p>
+                <p><a href="https://www.canva.com/design/DAGjl6x7yzQ/6tFINnVkrSlN-jZwtJae1Q/edit?utm_content=DAGjl6x7yzQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Enlace al diagrama</a></p>
+            </div>
+        </div>
 
-    <div class="seccion-titulo" onclick="toggleSeccion('semana3')">
-        <h2>Semana 3</h2>
-        <span>&#9660;</span>
-    </div>
-    <div class="seccion-contenido" id="semana3">
-        <p>Contenido de la tercera semana.</p>
-    </div>
+        <div class="seccion-titulo-contenedor" onclick="toggleSeccion('semana3')">
+            <div class="seccion-titulo">
+                <h2>Semana 3</h2>
+                <span>&#9660;</span>
+            </div>
+            <div class="seccion-contenido" id="semana3">
+                <p>Contenido de la tercera semana.</p>
+            </div>
+        </div>
 
-    <div class="seccion-titulo" onclick="toggleSeccion('semana4')">
-        <h2>Semana 4</h2>
-        <span>&#9660;</span>
-    </div>
-    <div class="seccion-contenido" id="semana4">
-        <p>Contenido de la cuarta semana.</p>
-    </div>
+        <div class="seccion-titulo-contenedor" onclick="toggleSeccion('semana4')">
+            <div class="seccion-titulo">
+                <h2>Semana 4</h2>
+                <span>&#9660;</span>
+            </div>
+            <div class="seccion-contenido" id="semana4">
+                <p>Contenido de la cuarta semana.</p>
+            </div>
+        </div>
 
-    <div class="seccion-titulo" onclick="toggleSeccion('semana5')">
-        <h2>Semana 5</h2>
-        <span>&#9660;</span>
-    </div>
-    <div class="seccion-contenido" id="semana5">
-        <p>Contenido de la quinta semana.</p>
-    </div>
+        <div class="seccion-titulo-contenedor" onclick="toggleSeccion('semana5')">
+            <div class="seccion-titulo">
+                <h2>Semana 5</h2>
+                <span>&#9660;</span>
+            </div>
+            <div class="seccion-contenido" id="semana5">
+                <p>Contenido de la quinta semana.</p>
+            </div>
+        </div>
 
-    <div class="seccion-titulo" onclick="toggleSeccion('semana6')">
-        <h2>Semana 6</h2>
-        <span>&#9660;</span>
-    </div>
-    <div class="seccion-contenido" id="semana6">
-        <p>Contenido de la sexta semana.</p>
-    </div>
+        <div class="seccion-titulo-contenedor" onclick="toggleSeccion('semana6')">
+            <div class="seccion-titulo">
+                <h2>Semana 6</h2>
+                <span>&#9660;</span>
+            </div>
+            <div class="seccion-contenido" id="semana6">
+                <p>Contenido de la sexta semana.</p>
+            </div>
+        </div>
 
-    <div class="seccion-titulo" onclick="toggleSeccion('semana7')">
-        <h2>Semana 7</h2>
-        <span>&#9660;</span>
-    </div>
-    <div class="seccion-contenido" id="semana7">
-        <p>Contenido de la séptima semana.</p>
+        <div class="seccion-titulo-contenedor" onclick="toggleSeccion('semana7')">
+            <div class="seccion-titulo">
+                <h2>Semana 7</h2>
+                <span>&#9660;</span>
+            </div>
+            <div class="seccion-contenido" id="semana7">
+                <p>Contenido de la séptima semana.</p>
+            </div>
+        </div>
     </div>
 
     <script>
