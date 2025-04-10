@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BASE DE DATOS 2</title>
+    <title>Mi Portafolio de Base de Datos 2</title>
     <style>
         body {
             font-family: sans-serif;
@@ -20,25 +20,39 @@
             text-align: center;
         }
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1em;
+        nav h1 {
+            margin: 0;
         }
 
-        .seccion {
-            padding: 20px;
-            margin: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        .seccion-titulo {
+            background-color: #ddd;
+            padding: 10px;
+            margin: 10px 20px 0 20px;
+            border-radius: 8px 8px 0 0;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
-        h2 {
+        .seccion-titulo h2 {
             color: #333;
-            border-bottom: 2px solid #ccc;
-            padding-bottom: 10px;
-            margin-bottom: 15px;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+
+        .seccion-contenido {
+            padding: 20px;
+            margin: 0 20px 20px 20px;
+            background-color: white;
+            border-radius: 0 0 8px 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: none; /* Ocultar inicialmente los contenidos */
+        }
+
+        .seccion-contenido.mostrar {
+            display: block; /* Mostrar el contenido cuando la clase 'mostrar' está presente */
         }
 
         /* Estilos adicionales que puedes personalizar */
@@ -47,49 +61,70 @@
 <body>
 
     <nav>
-        <a href="#semana1">Semana 1</a>
-        <a href="#semana2">Semana 2</a>
-        <a href="#semana3">Semana 3</a>
-        <a href="#semana4">Semana 4</a>
-        <a href="#semana5">Semana 5</a>
-        <a href="#semana6">Semana 6</a>
-        <a href="#semana7">Semana 7</a>
+        <h1>Tu Nombre Aquí</h1>
     </nav>
 
-    <div class="seccion" id="semana1">
+    <div class="seccion-titulo" onclick="toggleSeccion('semana1')">
         <h2>Semana 1</h2>
+        <span>&#9660;</span> </div>
+    <div class="seccion-contenido" id="semana1">
         <p>Aquí puedes agregar contenido sobre la primera semana. Por ejemplo, tus actividades, logros, reflexiones, etc.</p>
     </div>
 
-    <div class="seccion" id="semana2">
+    <div class="seccion-titulo" onclick="toggleSeccion('semana2')">
         <h2>Semana 2</h2>
+        <span>&#9660;</span>
+    </div>
+    <div class="seccion-contenido" id="semana2">
         <p>Contenido de la segunda semana.</p>
     </div>
 
-    <div class="seccion" id="semana3">
+    <div class="seccion-titulo" onclick="toggleSeccion('semana3')">
         <h2>Semana 3</h2>
+        <span>&#9660;</span>
+    </div>
+    <div class="seccion-contenido" id="semana3">
         <p>Contenido de la tercera semana.</p>
     </div>
 
-    <div class="seccion" id="semana4">
+    <div class="seccion-titulo" onclick="toggleSeccion('semana4')">
         <h2>Semana 4</h2>
+        <span>&#9660;</span>
+    </div>
+    <div class="seccion-contenido" id="semana4">
         <p>Contenido de la cuarta semana.</p>
     </div>
 
-    <div class="seccion" id="semana5">
+    <div class="seccion-titulo" onclick="toggleSeccion('semana5')">
         <h2>Semana 5</h2>
+        <span>&#9660;</span>
+    </div>
+    <div class="seccion-contenido" id="semana5">
         <p>Contenido de la quinta semana.</p>
     </div>
 
-    <div class="seccion" id="semana6">
+    <div class="seccion-titulo" onclick="toggleSeccion('semana6')">
         <h2>Semana 6</h2>
+        <span>&#9660;</span>
+    </div>
+    <div class="seccion-contenido" id="semana6">
         <p>Contenido de la sexta semana.</p>
     </div>
 
-    <div class="seccion" id="semana7">
+    <div class="seccion-titulo" onclick="toggleSeccion('semana7')">
         <h2>Semana 7</h2>
+        <span>&#9660;</span>
+    </div>
+    <div class="seccion-contenido" id="semana7">
         <p>Contenido de la séptima semana.</p>
     </div>
+
+    <script>
+        function toggleSeccion(id) {
+            const seccionContenido = document.getElementById(id);
+            seccionContenido.classList.toggle('mostrar');
+        }
+    </script>
 
 </body>
 </html>
