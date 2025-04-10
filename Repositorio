@@ -1,0 +1,170 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUIS - Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <!-- Header -->
+    <header class="flex items-center justify-between p-8 bg-white">
+      <h1 class="text-2xl font-extrabold">LUIS</h1>
+      <nav class="space-x-6">
+        <a href="#" class="text-sm font-medium hover:text-gray-600">Home</a>
+        <a href="#" class="text-sm font-medium hover:text-gray-600">About</a>
+        <a href="#" class="text-sm font-medium hover:text-gray-600">Services</a>
+        <a href="#" class="text-sm font-medium hover:text-gray-600">Projects</a>
+        <a
+          href="#"
+          class="border border-black px-4 py-2 text-sm font-bold hover:bg-black hover:text-white transition"
+          >CONTACT</a
+        >
+      </nav>
+    </header>
+
+    <!-- Section -->
+    <section class="px-8 py-16">
+      <p class="text-green-600 font-semibold uppercase tracking-wide">
+        Innovative Web Solutions
+      </p>
+      <h2 class="text-4xl font-extrabold mt-2 mb-12">
+        Crafting digital experiences that excel
+      </h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden">
+          <img
+            src="https://placehold.co/600x400"
+            alt="iMac and phone mockup showing responsive website layout on a clean desk"
+            class="w-full"
+          />
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">Responsive web design &rarr;</h3>
+            <p class="text-sm text-gray-600">
+              Create visually stunning websites that adapt to any device.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden">
+          <img
+            src="https://placehold.co/600x400"
+            alt="Laptop screen showing custom design wireframes and UI elements"
+            class="w-full"
+          />
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">Custom web development &rarr;</h3>
+            <p class="text-sm text-gray-600">
+              Tailor-made web solutions to fit your unique needs.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden">
+          <img
+            src="https://placehold.co/600x400"
+            alt="iMac with SEO tools and graphs on screen, next to plant and coffee cup"
+            class="w-full"
+          />
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">SEO optimization &rarr;</h3>
+            <p class="text-sm text-gray-600">
+              Enhance your website's visibility and reach more customers.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden">
+          <img
+            src="https://placehold.co/600x400"
+            alt="Analytics dashboard on computer monitor surrounded by notes and a tablet"
+            class="w-full"
+          />
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">Performance analytics &rarr;</h3>
+            <p class="text-sm text-gray-600">
+              Monitor and optimize site speed, user behavior, and conversions.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden">
+          <img
+            src="https://placehold.co/600x400"
+            alt="Mobile device showing a secure login interface with encryption icons"
+            class="w-full"
+          />
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">Secure authentication &rarr;</h3>
+            <p class="text-sm text-gray-600">
+              Implement safe login systems with modern authentication protocols.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden">
+          <img
+            src="https://placehold.co/600x400"
+            alt="CMS dashboard for managing blog posts and page content"
+            class="w-full"
+          />
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">Content management &rarr;</h3>
+            <p class="text-sm text-gray-600">
+              Easily update and manage your site’s content with intuitive tools.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 7 -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden">
+          <img
+            src="https://placehold.co/600x400"
+            alt="Email marketing interface with campaign analytics and subscriber growth"
+            class="w-full"
+          />
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">Email integration &rarr;</h3>
+            <p class="text-sm text-gray-600">
+              Grow your audience with powerful email marketing tools.
+            </p>
+          </div>
+        </div>
+
+        <!-- Card 8 -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden">
+          <img
+            src="https://placehold.co/600x400"
+            alt="Illustration of web accessibility features like keyboard navigation and screen readers"
+            class="w-full"
+          />
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">Accessibility-first design &rarr;</h3>
+            <p class="text-sm text-gray-600">
+              Ensure everyone can navigate your site with inclusive design.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
