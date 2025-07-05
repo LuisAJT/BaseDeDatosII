@@ -428,13 +428,29 @@ MONITOREO DE RENDIMIENTO    </p>
   </style>
 </head>
 <body class="bg-gray-100 text-gray-800">
-  <header class="flex items-center justify-between p-8 bg-white">
-    <h1 class="text-2xl font-extrabold">LUIS</h1>
-    <nav class="space-x-6">
-      <a href="index.html" class="text-sm font-medium hover:text-gray-600">Inicio</a>
-      <a href="#" class="border border-black px-4 py-2 text-sm font-bold hover:bg-black hover:text-white transition">CONTACTO</a>
-    </nav>
-  </header>
+ <header class="flex items-center justify-between p-8 bg-white">
+  <h1 class="text-2xl font-extrabold">LUIS</h1>
+  <nav class="space-x-4">
+    <button
+      id="editBtn"
+      class="border border-blue-500 px-4 py-2 text-sm font-bold text-blue-500 hover:bg-blue-500 hover:text-white transition"
+    >
+      ✏️ Editar
+    </button>
+    <button
+      id="downloadBtn"
+      class="border border-green-500 px-4 py-2 text-sm font-bold text-green-500 hover:bg-green-500 hover:text-white transition"
+    >
+      📥 Descargar HTML
+    </button>
+    <a href="index.html" class="text-sm font-medium hover:text-gray-600">Inicio</a>
+    <a
+      href="#"
+      class="border border-black px-4 py-2 text-sm font-bold hover:bg-black hover:text-white transition"
+      >CONTACTO</a
+    >
+  </nav>
+</header>
   <section class="px-8 py-16">
     ${document.querySelector("section").innerHTML}
   </section>
