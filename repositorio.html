@@ -227,33 +227,35 @@ BASE DE DATOS 2      </h2>
 
       </div>
     </section>
+
+    
     <script>
-  const editBtn = document.getElementById("editBtn");
+  const editBtn     = document.getElementById("editBtn");
+  const downloadBtn = document.getElementById("downloadBtn");
   let editMode = false;
 
+  /* ---------- BOTÓN EDITAR / GUARDAR ---------- */
   editBtn.addEventListener("click", () => {
     editMode = !editMode;
 
+    /* Recorremos todas las tarjetas */
     document.querySelectorAll(".editable-card").forEach((card) => {
-      // Local references de los nodos clave
       const titleEl = card.querySelector(".card-title");
       const descEl  = card.querySelector(".card-desc");
       const imgEl   = card.querySelector(".card-img");
       const linkEl  = card.querySelector(".card-link");
 
       if (editMode) {
-        /* ------------- ENTRAMOS EN MODO EDICIÓN ------------- */
-        // Reemplazar título y descripción por inputs/textarea
+        /* ---- ENTRAMOS EN MODO EDICIÓN ---- */
         titleEl.outerHTML = `
           <input type="text"
                  class="card-title font-bold text-lg mb-2 border px-2 py-1 w-full"
                  value="${titleEl.textContent}">
         `;
-        descEl.outerHTML = `
+        descEl.outerHTML  = `
           <textarea class="card-desc text-sm text-gray-600 border px-2 py-1 w-full"
                     rows="2">${descEl.textContent}</textarea>
         `;
-        // Campo para nueva URL de imagen
         imgEl.insertAdjacentHTML(
           "afterend",
           `<input type="text"
@@ -261,7 +263,6 @@ BASE DE DATOS 2      </h2>
                   placeholder="URL nueva de imagen"
                   value="${imgEl.src}">`
         );
-        // Campo para nuevo enlace del recurso (si existe)
         if (linkEl) {
           linkEl.outerHTML = `
             <input type="text"
@@ -269,26 +270,22 @@ BASE DE DATOS 2      </h2>
                    value="${linkEl.href}"
                    placeholder="URL del recurso">`;
         }
-        /* Cambiar texto del botón */
         editBtn.textContent = "✅ Guardar";
       } else {
-        /* ------------- SALIMOS DE MODO EDICIÓN (Guardar) ------------- */
+        /* ---- SALIMOS DE EDICIÓN (GUARDAR) ---- */
         const newTitle   = card.querySelector(".card-title").value;
         const newDesc    = card.querySelector(".card-desc").value;
         const newImgUrl  = card.querySelector(".img-url").value;
         const newLinkVal = card.querySelector(".card-link")?.value;
 
-        /* Restaurar título y descripción como elementos normales */
         card.querySelector(".card-title").outerHTML =
           `<h3 class="card-title font-bold text-lg mb-2">${newTitle}</h3>`;
         card.querySelector(".card-desc").outerHTML =
           `<p class="card-desc text-sm text-gray-600">${newDesc}</p>`;
 
-        /* Actualizar la imagen */
         if (newImgUrl) imgEl.src = newImgUrl;
         card.querySelector(".img-url").remove();
 
-        /* Actualizar el enlace al recurso */
         if (newLinkVal) {
           const contentDiv = card.querySelector(".card-content");
           contentDiv.insertAdjacentHTML(
@@ -301,21 +298,24 @@ BASE DE DATOS 2      </h2>
           );
           card.querySelector(".card-link").remove();
         }
-
-        /* Volver a texto “Editar” */
-        editBtn.textContent = "✏️ Editar";
-
-        /* ------------- DESCARGAR HTML EDITADO ------------- */
-        downloadCurrentHTML();
       }
     });
+
+    /* Al salir de edición, descargamos UNA sola vez */
+    if (!editMode) {
+      editBtn.textContent = "✏️ Editar";
+      downloadCurrentHTML();
+    }
   });
 
-  /* ---------- Función para descargar el HTML actual ---------- */
+  /* ---------- BOTÓN DESCARGAR HTML ---------- */
+  downloadBtn.addEventListener("click", downloadCurrentHTML);
+
+  /* ---------- FUNCIÓN PARA DESCARGAR EL HTML ACTUAL ---------- */
   function downloadCurrentHTML() {
     const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
-    const blob        = new Blob([htmlContent], { type: "text/html" });
-    const url         = URL.createObjectURL(blob);
+    const blob = new Blob([htmlContent], { type: "text/html" });
+    const url  = URL.createObjectURL(blob);
 
     const a = document.createElement("a");
     a.href     = url;
