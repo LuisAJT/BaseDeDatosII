@@ -233,46 +233,101 @@ BASE DE DATOS 2      </h2>
 
   editBtn.addEventListener("click", () => {
     editMode = !editMode;
+
     document.querySelectorAll(".editable-card").forEach((card) => {
-      const title = card.querySelector(".card-title");
-      const desc = card.querySelector(".card-desc");
-      const img = card.querySelector(".card-img");
-      const link = card.querySelector(".card-link");
+      // Local references de los nodos clave
+      const titleEl = card.querySelector(".card-title");
+      const descEl  = card.querySelector(".card-desc");
+      const imgEl   = card.querySelector(".card-img");
+      const linkEl  = card.querySelector(".card-link");
 
       if (editMode) {
-        // Reemplazar contenido por inputs
-        title.outerHTML = `<input type="text" class="card-title font-bold text-lg mb-2 border px-2 py-1 w-full" value="${title.innerText}">`;
-        desc.outerHTML = `<textarea class="card-desc text-sm text-gray-600 border px-2 py-1 w-full">${desc.innerText}</textarea>`;
-        img.insertAdjacentHTML("afterend", `<input type="text" class="img-url mt-1 text-sm border px-2 py-1 w-full" placeholder="URL nueva de imagen" value="${img.src}">`);
-        if (link) {
-          link.outerHTML = `<input type="text" class="card-link text-sm text-blue-600 border px-2 py-1 mt-1 w-full" value="${link.href}" placeholder="URL del recurso">`;
+        /* ------------- ENTRAMOS EN MODO EDICIÓN ------------- */
+        // Reemplazar título y descripción por inputs/textarea
+        titleEl.outerHTML = `
+          <input type="text"
+                 class="card-title font-bold text-lg mb-2 border px-2 py-1 w-full"
+                 value="${titleEl.textContent}">
+        `;
+        descEl.outerHTML = `
+          <textarea class="card-desc text-sm text-gray-600 border px-2 py-1 w-full"
+                    rows="2">${descEl.textContent}</textarea>
+        `;
+        // Campo para nueva URL de imagen
+        imgEl.insertAdjacentHTML(
+          "afterend",
+          `<input type="text"
+                  class="img-url mt-1 text-sm border px-2 py-1 w-full"
+                  placeholder="URL nueva de imagen"
+                  value="${imgEl.src}">`
+        );
+        // Campo para nuevo enlace del recurso (si existe)
+        if (linkEl) {
+          linkEl.outerHTML = `
+            <input type="text"
+                   class="card-link text-sm text-blue-600 border px-2 py-1 mt-1 w-full"
+                   value="${linkEl.href}"
+                   placeholder="URL del recurso">`;
         }
+        /* Cambiar texto del botón */
+        editBtn.textContent = "✅ Guardar";
       } else {
-        // Guardar cambios
-        const newTitle = card.querySelector(".card-title").value;
-        const newDesc = card.querySelector(".card-desc").value;
-        const newImgUrl = card.querySelector(".img-url").value;
-        const newLink = card.querySelector(".card-link")?.value;
+        /* ------------- SALIMOS DE MODO EDICIÓN (Guardar) ------------- */
+        const newTitle   = card.querySelector(".card-title").value;
+        const newDesc    = card.querySelector(".card-desc").value;
+        const newImgUrl  = card.querySelector(".img-url").value;
+        const newLinkVal = card.querySelector(".card-link")?.value;
 
-        card.querySelector(".card-title").outerHTML = `<h3 class="card-title font-bold text-lg mb-2">${newTitle}</h3>`;
-        card.querySelector(".card-desc").outerHTML = `<p class="card-desc text-sm text-gray-600">${newDesc}</p>`;
-        if (newImgUrl) card.querySelector(".card-img").src = newImgUrl;
+        /* Restaurar título y descripción como elementos normales */
+        card.querySelector(".card-title").outerHTML =
+          `<h3 class="card-title font-bold text-lg mb-2">${newTitle}</h3>`;
+        card.querySelector(".card-desc").outerHTML =
+          `<p class="card-desc text-sm text-gray-600">${newDesc}</p>`;
 
-        if (newLink) {
-          const cardBody = card.querySelector(".card-content");
-          cardBody.insertAdjacentHTML("beforeend", `<a href="${newLink}" target="_blank" class="card-link text-blue-600 hover:underline block mt-1">Ver recurso</a>`);
-          const inputLink = card.querySelector(".card-link");
-          if (inputLink) inputLink.remove();
+        /* Actualizar la imagen */
+        if (newImgUrl) imgEl.src = newImgUrl;
+        card.querySelector(".img-url").remove();
+
+        /* Actualizar el enlace al recurso */
+        if (newLinkVal) {
+          const contentDiv = card.querySelector(".card-content");
+          contentDiv.insertAdjacentHTML(
+            "beforeend",
+            `<a href="${newLinkVal}"
+                target="_blank"
+                class="card-link text-blue-600 hover:underline block mt-1">
+               Ver recurso
+             </a>`
+          );
+          card.querySelector(".card-link").remove();
         }
 
-        const inputImg = card.querySelector(".img-url");
-        if (inputImg) inputImg.remove();
+        /* Volver a texto “Editar” */
+        editBtn.textContent = "✏️ Editar";
+
+        /* ------------- DESCARGAR HTML EDITADO ------------- */
+        downloadCurrentHTML();
       }
     });
-
-    editBtn.textContent = editMode ? "✅ Guardar" : "✏️ Editar";
   });
+
+  /* ---------- Función para descargar el HTML actual ---------- */
+  function downloadCurrentHTML() {
+    const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+    const blob        = new Blob([htmlContent], { type: "text/html" });
+    const url         = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href     = url;
+    a.download = `repositorio-${new Date().toISOString().split("T")[0]}.html`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    URL.revokeObjectURL(url);
+  }
 </script>
+
 
   </body>
 </html>
