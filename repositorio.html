@@ -229,7 +229,7 @@ BASE DE DATOS 2      </h2>
     </section>
 
     
-    <script>
+   <script>
   const editBtn     = document.getElementById("editBtn");
   const downloadBtn = document.getElementById("downloadBtn");
   let editMode = false;
@@ -238,70 +238,74 @@ BASE DE DATOS 2      </h2>
   editBtn.addEventListener("click", () => {
     editMode = !editMode;
 
-    /* Recorremos todas las tarjetas */
     document.querySelectorAll(".editable-card").forEach((card) => {
       const titleEl = card.querySelector(".card-title");
       const descEl  = card.querySelector(".card-desc");
       const imgEl   = card.querySelector(".card-img");
-      const linkEl  = card.querySelector(".card-link");
+      let   linkEl  = card.querySelector("a.card-link");   // ancla original (si existe)
 
       if (editMode) {
         /* ---- ENTRAMOS EN MODO EDICIÓN ---- */
-        titleEl.outerHTML = `
-          <input type="text"
-                 class="card-title font-bold text-lg mb-2 border px-2 py-1 w-full"
-                 value="${titleEl.textContent}">
-        `;
-        descEl.outerHTML  = `
-          <textarea class="card-desc text-sm text-gray-600 border px-2 py-1 w-full"
-                    rows="2">${descEl.textContent}</textarea>
-        `;
-        imgEl.insertAdjacentHTML(
-          "afterend",
-          `<input type="text"
-                  class="img-url mt-1 text-sm border px-2 py-1 w-full"
-                  placeholder="URL nueva de imagen"
-                  value="${imgEl.src}">`
-        );
-        if (linkEl) {
-          linkEl.outerHTML = `
-            <input type="text"
-                   class="card-link text-sm text-blue-600 border px-2 py-1 mt-1 w-full"
-                   value="${linkEl.href}"
-                   placeholder="URL del recurso">`;
+        titleEl.contentEditable = true;
+        descEl.contentEditable  = true;
+
+        /* Campo URL de imagen */
+        if (!card.querySelector(".img-url")) {
+          imgEl.insertAdjacentHTML(
+            "afterend",
+            `<input type="text"
+                    class="img-url mt-1 text-sm border px-2 py-1 w-full"
+                    value="${imgEl.src}">`
+          );
         }
+
+        /* Campo URL de recurso */
+        const currentHref = linkEl ? linkEl.href : "";
+        if (!card.querySelector(".link-url")) {
+          card.querySelector(".card-content").insertAdjacentHTML(
+            "beforeend",
+            `<input type="text"
+                    class="link-url text-sm border px-2 py-1 mt-1 w-full"
+                    placeholder="URL del recurso"
+                    value="${currentHref}">`
+          );
+        }
+
         editBtn.textContent = "✅ Guardar";
       } else {
         /* ---- SALIMOS DE EDICIÓN (GUARDAR) ---- */
-        const newTitle   = card.querySelector(".card-title").value;
-        const newDesc    = card.querySelector(".card-desc").value;
-        const newImgUrl  = card.querySelector(".img-url").value;
-        const newLinkVal = card.querySelector(".card-link")?.value;
+        titleEl.contentEditable = false;
+        descEl.contentEditable  = false;
 
-        card.querySelector(".card-title").outerHTML =
-          `<h3 class="card-title font-bold text-lg mb-2">${newTitle}</h3>`;
-        card.querySelector(".card-desc").outerHTML =
-          `<p class="card-desc text-sm text-gray-600">${newDesc}</p>`;
-
-        if (newImgUrl) imgEl.src = newImgUrl;
+        /* Nueva imagen */
+        const newImg = card.querySelector(".img-url").value.trim();
+        if (newImg) imgEl.src = newImg;
         card.querySelector(".img-url").remove();
 
-        if (newLinkVal) {
-          const contentDiv = card.querySelector(".card-content");
-          contentDiv.insertAdjacentHTML(
-            "beforeend",
-            `<a href="${newLinkVal}"
-                target="_blank"
-                class="card-link text-blue-600 hover:underline block mt-1">
-               Ver recurso
-             </a>`
-          );
-          card.querySelector(".card-link").remove();
+        /* Nuevo enlace */
+        const newLink = card.querySelector(".link-url").value.trim();
+        card.querySelector(".link-url").remove();
+
+        if (newLink) {
+          /* Si ya hay <a>, actualizo href; si no, creo uno y encierro la imagen */
+          if (linkEl) {
+            linkEl.href = newLink;
+          } else {
+            linkEl = document.createElement("a");
+            linkEl.className = "card-link";
+            linkEl.href = newLink;
+            linkEl.target = "_blank";
+            imgEl.replaceWith(linkEl);
+            linkEl.appendChild(imgEl);
+          }
+        } else if (linkEl) {
+          /* Si el campo quedó vacío, quito el enlace y dejo solo la imagen */
+          linkEl.replaceWith(imgEl);
         }
       }
     });
 
-    /* Al salir de edición, descargamos UNA sola vez */
+    /* Al salir de edición descargamos una sola vez */
     if (!editMode) {
       editBtn.textContent = "✏️ Editar";
       downloadCurrentHTML();
@@ -323,7 +327,6 @@ BASE DE DATOS 2      </h2>
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
-
     URL.revokeObjectURL(url);
   }
 </script>
