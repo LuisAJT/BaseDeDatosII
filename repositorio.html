@@ -1,336 +1,534 @@
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LUIS - REPOSITORIO</title>
+    <title>LUIS – REPOSITORIO</title>
+
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
+
+    <!-- Font Awesome (opcional para más iconos) -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <!-- Google Font Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
+          rel="stylesheet" />
+
     <style>
-      body {
-        font-family: 'Inter', sans-serif;
-      }
+      body { font-family: 'Inter', sans-serif; }
     </style>
   </head>
-  
+
   <body class="bg-gray-100 text-gray-800">
     <!-- Header -->
-    <header class="flex items-center justify-between p-8 bg-white">
+    <header class="flex items-center justify-between p-8 bg-white shadow">
       <h1 class="text-2xl font-extrabold">LUIS</h1>
+
       <nav class="space-x-4">
-        <button
-          id="editBtn"
-          class="border border-blue-500 px-4 py-2 text-sm font-bold text-blue-500 hover:bg-blue-500 hover:text-white transition"
-        >
-          ✏️ Editar
+        <button id="editBtn"
+                class="border border-blue-500 px-4 py-2 text-sm font-bold text-blue-500 hover:bg-blue-500 hover:text-white transition">
+          ✏️ Editar
         </button>
-        <button
-          id="downloadBtn"
-          class="border border-green-500 px-4 py-2 text-sm font-bold text-green-500 hover:bg-green-500 hover:text-white transition"
-        >
-          📥 Descargar HTML
+
+        <button id="downloadBtn"
+                class="border border-green-500 px-4 py-2 text-sm font-bold text-green-500 hover:bg-green-500 hover:text-white transition">
+          📥 Descargar HTML
         </button>
-        <a href="index.html" class="text-sm font-medium hover:text-gray-600">Inicio</a>
-        <a
-          href="#"
-          class="border border-black px-4 py-2 text-sm font-bold hover:bg-black hover:text-white transition"
-        >CONTACTO</a>
+
+        <a href="index.html"
+           class="text-sm font-medium hover:text-gray-600">Inicio</a>
+
+        <a href="#"
+           class="border border-black px-4 py-2 text-sm font-bold hover:bg-black hover:text-white transition">
+          CONTACTO
+        </a>
       </nav>
     </header>
 
-    <!-- Section -->
+    <!-- Contenido principal -->
     <section class="px-8 py-16">
       <p class="text-green-600 font-semibold uppercase tracking-wide">
-UNIVERSIDAD PERUANA LOS ANDES      </p>
-      <h2 class="text-4xl font-extrabold mt-2 mb-12">
-BASE DE DATOS 2      </h2>
+        Universidad Peruana Los Andes
+      </p>
+      <h2 class="text-4xl font-extrabold mt-2 mb-12">Base de Datos 2</h2>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-        <!-- Card 1 -->
-        <!-- Semana 1 -->
-<div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
-  <a href="https://www.canva.com/design/DAGjkU8Vn2Q/rIXllxChn284hN40GA6pyg/edit?utm_content=DAGjkU8Vn2Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="card-link">
-    <img src="https://concepto.de/wp-content/uploads/2018/04/base-de-datos-min-e1523470739502.jpg" alt="" class="w-full card-img" />
-  </a>
-  <div class="p-4 card-content">
-    <h3 class="card-title font-bold text-lg mb-2">Semana 1 &rarr;</h3>
-    <p class="card-desc text-sm text-gray-600">Introduccion a los gestores de base de datos</p>
-  </div>
-</div>
 
-<!-- Semana 2 -->
-<div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
-  <a href="https://www.canva.com/design/DAGjl6x7yzQ/6tFINnVkrSlN-jZwtJae1Q/edit?utm_content=DAGjl6x7yzQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="card-link">
-    <img src="https://formaentic.weebly.com/uploads/1/6/9/2/16924982/791873403.jpg" alt="" class="w-full card-img" />
-  </a>
-  <div class="p-4 card-content">
-    <h3 class="card-title font-bold text-lg mb-2">Semana 2 &rarr;</h3>
-    <p class="card-desc text-sm text-gray-600">Entidad - Relacion</p>
-  </div>
-</div>
+        <!-- =============== SEMANA 01 =============== -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
+          <a href="https://www.canva.com/design/DAGjkU8Vn2Q/rIXllxChn284hN40GA6pyg/edit?utm_content=DAGjkU8Vn2Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+             target="_blank"
+             class="card-link">
+            <img src="https://concepto.de/wp-content/uploads/2018/04/base-de-datos-min-e1523470739502.jpg"
+                 alt="Introducción a los gestores de BD"
+                 class="w-full card-img" />
+          </a>
 
-<!-- Semana 3 -->
-<div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
-  <a href="https://www.canva.com/design/DAGlh6vfeYs/pf27_WH7UXHNIRjXjJnzUg/edit?utm_content=DAGlh6vfeYs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="card-link">
-    <img src="https://universidadeuropea.com/resources/media/images/bases-datos-big-data-1200x630.original.jpg" alt="" class="w-full card-img" />
-  </a>
-  <div class="p-4 card-content">
-    <h3 class="card-title font-bold text-lg mb-2">Semana 3 &rarr;</h3>
-    <p class="card-desc text-sm text-gray-600">MODELO RELACIONAL 1</p>
-  </div>
-</div>
+          <div class="p-4 card-content">
+            <h3 class="card-title font-bold text-lg mb-2">Semana 1 &rarr;</h3>
+            <p class="card-desc text-sm text-gray-600">
+              Introducción a los gestores de base de datos
+            </p>
 
-<!-- Semana 4 -->
-<div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
-  <a href="https://www.canva.com/design/DAGliDEep1A/JBxuxHbDlYn7ZMFMjQbgHw/edit?utm_content=DAGliDEep1A&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="card-link">
-    <img src="https://universidadeuropea.com/resources/media/images/bases-datos-big-data-1200x630.original.jpg" alt="" class="w-full card-img" />
-  </a>
-  <div class="p-4 card-content">
-    <h3 class="card-title font-bold text-lg mb-2">Semana 4 &rarr;</h3>
-    <p class="card-desc text-sm text-gray-600">MODELO RELACIONAL 2</p>
-  </div>
-</div>
+            <!-- botón descarga -->
+            <a href="https://www.canva.com/design/DAGjkU8Vn2Q/rIXllxChn284hN40GA6pyg/edit?utm_content=DAGjkU8Vn2Q&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+               target="_blank"
+               class="download-week-btn inline-block mt-2 px-3 py-1 text-sm font-semibold text-white bg-green-500 rounded hover:bg-green-600 transition">
+              📥 Descargar
+            </a>
+          </div>
+        </div>
 
-<!-- Semana 5 -->
-<div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
-  <a href="https://www.canva.com/design/DAGmwLtJC9A/UJXA-ePyL_YUOusUwJ2xQQ/edit?utm_content=DAGmwLtJC9A&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank" class="card-link">
-    <img src="https://www.techsmith.es/blog/wp-content/uploads/2022/10/blog_snagit_user-documentation_1500x1100-1.png" alt="" class="w-full card-img" />
-  </a>
-  <div class="p-4 card-content">
-    <h3 class="card-title font-bold text-lg mb-2">Semana 5 &rarr;</h3>
-    <p class="card-desc text-sm text-gray-600">GUIA MANUAL - AZURE</p>
-  </div>
-</div>
+        <!-- =============== SEMANA 02 =============== -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
+          <a href="https://www.canva.com/design/DAGjl6x7yzQ/6tFINnVkrSlN-jZwtJae1Q/edit?utm_content=DAGjl6x7yzQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+             target="_blank"
+             class="card-link">
+            <img src="https://formaentic.weebly.com/uploads/1/6/9/2/16924982/791873403.jpg"
+                 alt="Entidad‑Relación"
+                 class="w-full card-img" />
+          </a>
 
-<!-- Semana 6 -->
-<div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
-  <a href="EXAMEN PARCIAL-JINES TAPIA.pdf" target="_blank" class="card-link">
-    <img src="https://placehold.co/600x400" alt="" class="w-full card-img" />
-  </a>
-  <div class="p-4 card-content">
-    <h3 class="card-title font-bold text-lg mb-2">Semana 6 &rarr;</h3>
-    <p class="card-desc text-sm text-gray-600">EXAMEN PARCIAL</p>
-  </div>
-</div>
+          <div class="p-4 card-content">
+            <h3 class="card-title font-bold text-lg mb-2">Semana 2 &rarr;</h3>
+            <p class="card-desc text-sm text-gray-600">Entidad ‑ Relación</p>
 
-<!-- Semana 7 -->
-<div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
-  <img src="https://placehold.co/600x400" alt="" class="w-full card-img" />
-  <div class="p-4 card-content">
-    <h3 class="card-title font-bold text-lg mb-2">Semana 7 &rarr;</h3>
-    <p class="card-desc text-sm text-gray-600">Contenido próximamente...</p>
-  </div>
-</div>
+            <a href="https://www.canva.com/design/DAGjl6x7yzQ/6tFINnVkrSlN-jZwtJae1Q/edit?utm_content=DAGjl6x7yzQ&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+               target="_blank"
+               class="download-week-btn inline-block mt-2 px-3 py-1 text-sm font-semibold text-white bg-green-500 rounded hover:bg-green-600 transition">
+              📥 Descargar
+            </a>
+          </div>
+        </div>
 
-<!-- Semana 8 -->
-<div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
-  <img src="https://placehold.co/600x400" alt="" class="w-full card-img" />
-  <div class="p-4 card-content">
-    <h3 class="card-title font-bold text-lg mb-2">Semana 8 &rarr;</h3>
-    <p class="card-desc text-sm text-gray-600">Contenido próximamente...</p>
-  </div>
-</div>
+        <!-- =============== SEMANA 03 =============== -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
+          <a href="https://www.canva.com/design/DAGlh6vfeYs/pf27_WH7UXHNIRjXjJnzUg/edit?utm_content=DAGlh6vfeYs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+             target="_blank"
+             class="card-link">
+            <img src="https://universidadeuropea.com/resources/media/images/bases-datos-big-data-1200x630.original.jpg"
+                 alt="Modelo relacional 1"
+                 class="w-full card-img" />
+          </a>
 
-<!-- Semana 9 -->
-<div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
-  <a href="https://docs.google.com/document/d/18-7Kp-y6Kr5o_mie0EphwcxB9J1I8H-EgI7omwYq9Hs/edit?usp=sharing" target="_blank" class="card-link">
-    <img src="https://universidadeuropea.com/resources/media/images/lenguaje-programacion-sql-800x450.2e16d0ba.fill-767x384.jpg" alt="" class="w-full card-img" />
-  </a>
-  <div class="p-4 card-content">
-    <h3 class="card-title font-bold text-lg mb-2">Semana 9 &rarr;</h3>
-    <p class="card-desc text-sm text-gray-600">Consultas SQL</p>
-  </div>
-</div>
+          <div class="p-4 card-content">
+            <h3 class="card-title font-bold text-lg mb-2">Semana 3 &rarr;</h3>
+            <p class="card-desc text-sm text-gray-600">Modelo Relacional 1</p>
 
-<!-- Semana 10 -->
-<div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
-  <a href="https://docs.google.com/document/d/1m5k_QfKlk_9bTU_cw8FJWROmzM60jN1nqYeBX698g8c/edit?usp=sharing" target="_blank" class="card-link">
-    <img src="https://universidadeuropea.com/resources/media/images/lenguaje-programacion-sql-800x450.2e16d0ba.fill-767x384.jpg" alt="" class="w-full card-img" />
-  </a>
-  <div class="p-4 card-content">
-    <h3 class="card-title font-bold text-lg mb-2">Semana 10 &rarr;</h3>
-    <p class="card-desc text-sm text-gray-600">Consultas SQL</p>
-  </div>
-</div>
+            <a href="https://www.canva.com/design/DAGlh6vfeYs/pf27_WH7UXHNIRjXjJnzUg/edit?utm_content=DAGlh6vfeYs&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+               target="_blank"
+               class="download-week-btn inline-block mt-2 px-3 py-1 text-sm font-semibold text-white bg-green-500 rounded hover:bg-green-600 transition">
+              📥 Descargar
+            </a>
+          </div>
+        </div>
 
-<!-- Semana 11 -->
-<div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
-  <a href="https://docs.google.com/document/d/12Ugpor8CIdd92QAXbQqNYsyEe8UVkIDHqS1-KHsWM1A/edit?usp=sharing" target="_blank" class="card-link">
-    <img src="https://media.istockphoto.com/id/695441632/es/vector/m%C3%B3dulos-de-base-de-datos-planos-redonda-de-los-iconos.jpg?s=612x612&w=is&k=20&c=udbCuzt96Bkj8qfvOefyjiSIiUMKYhfRuS02wp0PEkg=" alt="" class="w-full card-img" />
-  </a>
-  <div class="p-4 card-content">
-    <h3 class="card-title font-bold text-lg mb-2">Semana 11 &rarr;</h3>
-    <p class="card-desc text-sm text-gray-600">MODULOS</p>
-  </div>
-</div>
+        <!-- =============== SEMANA 04 =============== -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
+          <a href="https://www.canva.com/design/DAGliDEep1A/JBxuxHbDlYn7ZMFMjQbgHw/edit?utm_content=DAGliDEep1A&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+             target="_blank"
+             class="card-link">
+            <img src="https://universidadeuropea.com/resources/media/images/bases-datos-big-data-1200x630.original.jpg"
+                 alt="Modelo relacional 2"
+                 class="w-full card-img" />
+          </a>
 
-<!-- Semana 12 -->
-<div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
-  <a href="https://docs.google.com/document/d/1tCJknJqNZqqLuBEhogrGCLRUMI82xzvSQD7YJBTz_f0/edit?usp=sharing" target="_blank" class="card-link">
-    <img src="https://www.comunicarseweb.com.ar/wp-content/uploads/2025/05/Supabase.png" alt="" class="w-full card-img" />
-  </a>
-  <div class="p-4 card-content">
-    <h3 class="card-title font-bold text-lg mb-2">Semana 12 &rarr;</h3>
-    <p class="card-desc text-sm text-gray-600">SUPABASE - base de datos</p>
-  </div>
-</div>
+          <div class="p-4 card-content">
+            <h3 class="card-title font-bold text-lg mb-2">Semana 4 &rarr;</h3>
+            <p class="card-desc text-sm text-gray-600">Modelo Relacional 2</p>
 
-<!-- Semana 13 -->
-<div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
-  <a href="semana 13.pdf" target="_blank" class="card-link">
-    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaWOsE8L0gtzfnRYAo1SYy7CSOV3GMzjygtA&s" alt="" class="w-full card-img" />
-  </a>
-  <div class="p-4 card-content">
-    <h3 class="card-title font-bold text-lg mb-2">Semana 13 &rarr;</h3>
-    <p class="card-desc text-sm text-gray-600">SEGURIDAD</p>
-  </div>
-</div>
+            <a href="https://www.canva.com/design/DAGliDEep1A/JBxuxHbDlYn7ZMFMjQbgHw/edit?utm_content=DAGliDEep1A&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+               target="_blank"
+               class="download-week-btn inline-block mt-2 px-3 py-1 text-sm font-semibold text-white bg-green-500 rounded hover:bg-green-600 transition">
+              📥 Descargar
+            </a>
+          </div>
+        </div>
 
-<!-- Semana 14 -->
-<div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
-  <a href="SEMANA 14.pdf" target="_blank" class="card-link">
-    <img src="https://www.campusmvp.es/recursos/recursos/image.axd?picture=SQL-Funciones-Agregacion.jpg" alt="" class="w-full card-img" />
-  </a>
-  <div class="p-4 card-content">
-    <h3 class="card-title font-bold text-lg mb-2">Semana 14 &rarr;</h3>
-    <p class="card-desc text-sm text-gray-600">FUNCIONES DE AGREGACION</p>
-  </div>
-</div>
+        <!-- =============== SEMANA 05 =============== -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
+          <a href="https://www.canva.com/design/DAGmwLtJC9A/UJXA-ePyL_YUOusUwJ2xQQ/edit?utm_content=DAGmwLtJC9A&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+             target="_blank"
+             class="card-link">
+            <img src="https://www.techsmith.es/blog/wp-content/uploads/2022/10/blog_snagit_user-documentation_1500x1100-1.png"
+                 alt="Guía Azure"
+                 class="w-full card-img" />
+          </a>
 
-<!-- Semana 15 -->
-<div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
-  <a href="semana 15.pdf" target="_blank" class="card-link">
-    <img src="https://www.e-dea.co/hubfs/putting-attention-every-moment-polygraph-examiner-works-office-with-his-lie-detector-s-equipment.jpg" alt="" class="w-full card-img" />
-  </a>
-  <div class="p-4 card-content">
-    <h3 class="card-title font-bold text-lg mb-2">Semana 15 &rarr;</h3>
-    <p class="card-desc text-sm text-gray-600">MONITOREO DE RENDIMIENTO</p>
-  </div>
-</div>
+          <div class="p-4 card-content">
+            <h3 class="card-title font-bold text-lg mb-2">Semana 5 &rarr;</h3>
+            <p class="card-desc text-sm text-gray-600">Guía manual ‑ Azure</p>
 
-<!-- Semana 16 -->
-<div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
-  <img src="https://placehold.co/600x400" alt="" class="w-full card-img" />
-  <div class="p-4 card-content">
-    <h3 class="card-title font-bold text-lg mb-2">Semana 16 &rarr;</h3>
-    <p class="card-desc text-sm text-gray-600">Contenido final próximamente...</p>
-  </div>
-</div>
+            <a href="https://www.canva.com/design/DAGmwLtJC9A/UJXA-ePyL_YUOusUwJ2xQQ/edit?utm_content=DAGmwLtJC9A&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+               target="_blank"
+               class="download-week-btn inline-block mt-2 px-3 py-1 text-sm font-semibold text-white bg-green-500 rounded hover:bg-green-600 transition">
+              📥 Descargar
+            </a>
+          </div>
+        </div>
 
+        <!-- =============== SEMANA 06 =============== -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
+          <a href="EXAMEN PARCIAL-JINES TAPIA.pdf"
+             target="_blank"
+             class="card-link">
+            <img src="https://placehold.co/600x400"
+                 alt="Examen parcial"
+                 class="w-full card-img" />
+          </a>
 
+          <div class="p-4 card-content">
+            <h3 class="card-title font-bold text-lg mb-2">Semana 6 &rarr;</h3>
+            <p class="card-desc text-sm text-gray-600">Examen Parcial</p>
+
+            <a href="EXAMEN PARCIAL-JINES TAPIA.pdf"
+               download
+               class="download-week-btn inline-block mt-2 px-3 py-1 text-sm font-semibold text-white bg-green-500 rounded hover:bg-green-600 transition">
+              📥 Descargar
+            </a>
+          </div>
+        </div>
+
+        <!-- =============== SEMANA 07 =============== -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
+          <a href="#"
+             class="card-link">
+            <img src="https://placehold.co/600x400"
+                 alt="Semana 7"
+                 class="w-full card-img" />
+          </a>
+
+          <div class="p-4 card-content">
+            <h3 class="card-title font-bold text-lg mb-2">Semana 7 &rarr;</h3>
+            <p class="card-desc text-sm text-gray-600">Contenido próximamente…</p>
+
+            <a href="#"
+               class="download-week-btn inline-block mt-2 px-3 py-1 text-sm font-semibold text-white bg-gray-400 rounded cursor-not-allowed">
+              📥 Sin archivo
+            </a>
+          </div>
+        </div>
+
+        <!-- =============== SEMANA 08 =============== -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
+          <a href="#"
+             class="card-link">
+            <img src="https://placehold.co/600x400"
+                 alt="Semana 8"
+                 class="w-full card-img" />
+          </a>
+
+          <div class="p-4 card-content">
+            <h3 class="card-title font-bold text-lg mb-2">Semana 8 &rarr;</h3>
+            <p class="card-desc text-sm text-gray-600">Contenido próximamente…</p>
+
+            <a href="#"
+               class="download-week-btn inline-block mt-2 px-3 py-1 text-sm font-semibold text-white bg-gray-400 rounded cursor-not-allowed">
+              📥 Sin archivo
+            </a>
+          </div>
+        </div>
+
+        <!-- =============== SEMANA 09 =============== -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
+          <a href="https://docs.google.com/document/d/18-7Kp-y6Kr5o_mie0EphwcxB9J1I8H-EgI7omwYq9Hs/edit?usp=sharing"
+             target="_blank"
+             class="card-link">
+            <img src="https://universidadeuropea.com/resources/media/images/lenguaje-programacion-sql-800x450.2e16d0ba.fill-767x384.jpg"
+                 alt="Consultas SQL"
+                 class="w-full card-img" />
+          </a>
+
+          <div class="p-4 card-content">
+            <h3 class="card-title font-bold text-lg mb-2">Semana 9 &rarr;</h3>
+            <p class="card-desc text-sm text-gray-600">Consultas SQL</p>
+
+            <a href="https://docs.google.com/document/d/18-7Kp-y6Kr5o_mie0EphwcxB9J1I8H-EgI7omwYq9Hs/edit?usp=sharing"
+               target="_blank"
+               class="download-week-btn inline-block mt-2 px-3 py-1 text-sm font-semibold text-white bg-green-500 rounded hover:bg-green-600 transition">
+              📥 Descargar
+            </a>
+          </div>
+        </div>
+
+        <!-- =============== SEMANA 10 =============== -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
+          <a href="https://docs.google.com/document/d/1m5k_QfKlk_9bTU_cw8FJWROmzM60jN1nqYeBX698g8c/edit?usp=sharing"
+             target="_blank"
+             class="card-link">
+            <img src="https://universidadeuropea.com/resources/media/images/lenguaje-programacion-sql-800x450.2e16d0ba.fill-767x384.jpg"
+                 alt="Consultas SQL"
+                 class="w-full card-img" />
+          </a>
+
+          <div class="p-4 card-content">
+            <h3 class="card-title font-bold text-lg mb-2">Semana 10 &rarr;</h3>
+            <p class="card-desc text-sm text-gray-600">Consultas SQL</p>
+
+            <a href="https://docs.google.com/document/d/1m5k_QfKlk_9bTU_cw8FJWROmzM60jN1nqYeBX698g8c/edit?usp=sharing"
+               target="_blank"
+               class="download-week-btn inline-block mt-2 px-3 py-1 text-sm font-semibold text-white bg-green-500 rounded hover:bg-green-600 transition">
+              📥 Descargar
+            </a>
+          </div>
+        </div>
+
+        <!-- =============== SEMANA 11 =============== -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
+          <a href="https://docs.google.com/document/d/12Ugpor8CIdd92QAXbQqNYsyEe8UVkIDHqS1-KHsWM1A/edit?usp=sharing"
+             target="_blank"
+             class="card-link">
+            <img src="https://media.istockphoto.com/id/695441632/es/vector/m%C3%B3dulos-de-base-de-datos-planos-redonda-de-los-iconos.jpg?s=612x612&w=is&k=20&c=udbCuzt96Bkj8qfvOefyjiSIiUMKYhfRuS02wp0PEkg="
+                 alt="Módulos"
+                 class="w-full card-img" />
+          </a>
+
+          <div class="p-4 card-content">
+            <h3 class="card-title font-bold text-lg mb-2">Semana 11 &rarr;</h3>
+            <p class="card-desc text-sm text-gray-600">Módulos</p>
+
+            <a href="https://docs.google.com/document/d/12Ugpor8CIdd92QAXbQqNYsyEe8UVkIDHqS1-KHsWM1A/edit?usp=sharing"
+               target="_blank"
+               class="download-week-btn inline-block mt-2 px-3 py-1 text-sm font-semibold text-white bg-green-500 rounded hover:bg-green-600 transition">
+              📥 Descargar
+            </a>
+          </div>
+        </div>
+
+        <!-- =============== SEMANA 12 =============== -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
+          <a href="https://docs.google.com/document/d/1tCJknJqNZqqLuBEhogrGCLRUMI82xzvSQD7YJBTz_f0/edit?usp=sharing"
+             target="_blank"
+             class="card-link">
+            <img src="https://www.comunicarseweb.com.ar/wp-content/uploads/2025/05/Supabase.png"
+                 alt="Supabase"
+                 class="w-full card-img" />
+          </a>
+
+          <div class="p-4 card-content">
+            <h3 class="card-title font-bold text-lg mb-2">Semana 12 &rarr;</h3>
+            <p class="card-desc text-sm text-gray-600">Supabase – Base de datos</p>
+
+            <a href="https://docs.google.com/document/d/1tCJknJqNZqqLuBEhogrGCLRUMI82xzvSQD7YJBTz_f0/edit?usp=sharing"
+               target="_blank"
+               class="download-week-btn inline-block mt-2 px-3 py-1 text-sm font-semibold text-white bg-green-500 rounded hover:bg-green-600 transition">
+              📥 Descargar
+            </a>
+          </div>
+        </div>
+
+        <!-- =============== SEMANA 13 =============== -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
+          <a href="semana 13.pdf"
+             target="_blank"
+             class="card-link">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaWOsE8L0gtzfnRYAo1SYy7CSOV3GMzjygtA&s"
+                 alt="Seguridad"
+                 class="w-full card-img" />
+          </a>
+
+          <div class="p-4 card-content">
+            <h3 class="card-title font-bold text-lg mb-2">Semana 13 &rarr;</h3>
+            <p class="card-desc text-sm text-gray-600">Seguridad</p>
+
+            <a href="semana 13.pdf"
+               download
+               class="download-week-btn inline-block mt-2 px-3 py-1 text-sm font-semibold text-white bg-green-500 rounded hover:bg-green-600 transition">
+              📥 Descargar
+            </a>
+          </div>
+        </div>
+
+        <!-- =============== SEMANA 14 =============== -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
+          <a href="SEMANA 14.pdf"
+             target="_blank"
+             class="card-link">
+            <img src="https://www.campusmvp.es/recursos/recursos/image.axd?picture=SQL-Funciones-Agregacion.jpg"
+                 alt="Funciones de agregación"
+                 class="w-full card-img" />
+          </a>
+
+          <div class="p-4 card-content">
+            <h3 class="card-title font-bold text-lg mb-2">Semana 14 &rarr;</h3>
+            <p class="card-desc text-sm text-gray-600">Funciones de Agregación</p>
+
+            <a href="SEMANA 14.pdf"
+               download
+               class="download-week-btn inline-block mt-2 px-3 py-1 text-sm font-semibold text-white bg-green-500 rounded hover:bg-green-600 transition">
+              📥 Descargar
+            </a>
+          </div>
+        </div>
+
+        <!-- =============== SEMANA 15 =============== -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
+          <a href="semana 15.pdf"
+             target="_blank"
+             class="card-link">
+            <img src="https://www.e-dea.co/hubfs/putting-attention-every-moment-polygraph-examiner-works-office-with-his-lie-detector-s-equipment.jpg"
+                 alt="Monitoreo de rendimiento"
+                 class="w-full card-img" />
+          </a>
+
+          <div class="p-4 card-content">
+            <h3 class="card-title font-bold text-lg mb-2">Semana 15 &rarr;</h3>
+            <p class="card-desc text-sm text-gray-600">Monitoreo de Rendimiento</p>
+
+            <a href="semana 15.pdf"
+               download
+               class="download-week-btn inline-block mt-2 px-3 py-1 text-sm font-semibold text-white bg-green-500 rounded hover:bg-green-600 transition">
+              📥 Descargar
+            </a>
+          </div>
+        </div>
+
+        <!-- =============== SEMANA 16 =============== -->
+        <div class="bg-white rounded-md shadow-md overflow-hidden editable-card">
+          <a href="#"
+             class="card-link">
+            <img src="https://placehold.co/600x400"
+                 alt="Semana 16"
+                 class="w-full card-img" />
+          </a>
+
+          <div class="p-4 card-content">
+            <h3 class="card-title font-bold text-lg mb-2">Semana 16 &rarr;</h3>
+            <p class="card-desc text-sm text-gray-600">Contenido final próximamente…</p>
+
+            <a href="#"
+               class="download-week-btn inline-block mt-2 px-3 py-1 text-sm font-semibold text-white bg-gray-400 rounded cursor-not-allowed">
+              📥 Sin archivo
+            </a>
+          </div>
+        </div>
 
       </div>
     </section>
 
-    
-   <script>
-  const editBtn     = document.getElementById("editBtn");
-  const downloadBtn = document.getElementById("downloadBtn");
-  let editMode = false;
+    <!-- =================== SCRIPT =================== -->
+    <script>
+      const editBtn     = document.getElementById("editBtn");
+      const downloadBtn = document.getElementById("downloadBtn");
+      let editMode = false;
 
-  /* ---------- BOTÓN EDITAR / GUARDAR ---------- */
-  editBtn.addEventListener("click", () => {
-    editMode = !editMode;
+      /* ---------- BOTÓN EDITAR / GUARDAR ---------- */
+      editBtn.addEventListener("click", () => {
+        editMode = !editMode;
 
-    document.querySelectorAll(".editable-card").forEach((card) => {
-      const titleEl = card.querySelector(".card-title");
-      const descEl  = card.querySelector(".card-desc");
-      const imgEl   = card.querySelector(".card-img");
-      let   linkEl  = card.querySelector("a.card-link");   // ancla original (si existe)
+        document.querySelectorAll(".editable-card").forEach((card) => {
+          const titleEl = card.querySelector(".card-title");
+          const descEl  = card.querySelector(".card-desc");
+          const imgEl   = card.querySelector(".card-img");
+          let   linkEl  = card.querySelector("a.card-link");
 
-      if (editMode) {
-        /* ---- ENTRAMOS EN MODO EDICIÓN ---- */
-        titleEl.contentEditable = true;
-        descEl.contentEditable  = true;
+          if (editMode) {
+            /* ---- ENTRAMOS EN MODO EDICIÓN ---- */
+            titleEl.contentEditable = true;
+            descEl.contentEditable  = true;
 
-        /* Campo URL de imagen */
-        if (!card.querySelector(".img-url")) {
-          imgEl.insertAdjacentHTML(
-            "afterend",
-            `<input type="text"
-                    class="img-url mt-1 text-sm border px-2 py-1 w-full"
-                    value="${imgEl.src}">`
-          );
-        }
+            /* Campo URL imagen */
+            if (!card.querySelector(".img-url")) {
+              imgEl.insertAdjacentHTML(
+                "afterend",
+                `<input type="text"
+                        class="img-url mt-1 text-sm border px-2 py-1 w-full"
+                        value="${imgEl.src}">`
+              );
+            }
 
-        /* Campo URL de recurso */
-        const currentHref = linkEl ? linkEl.href : "";
-        if (!card.querySelector(".link-url")) {
-          card.querySelector(".card-content").insertAdjacentHTML(
-            "beforeend",
-            `<input type="text"
-                    class="link-url text-sm border px-2 py-1 mt-1 w-full"
-                    placeholder="URL del recurso"
-                    value="${currentHref}">`
-          );
-        }
+            /* Campo URL recurso */
+            const currentHref = linkEl ? linkEl.href : "";
+            if (!card.querySelector(".link-url")) {
+              card.querySelector(".card-content").insertAdjacentHTML(
+                "beforeend",
+                `<input type="text"
+                        class="link-url text-sm border px-2 py-1 mt-1 w-full"
+                        placeholder="URL del recurso"
+                        value="${currentHref}">`
+              );
+            }
 
-        editBtn.textContent = "✅ Guardar";
-      } else {
-        /* ---- SALIMOS DE EDICIÓN (GUARDAR) ---- */
-        titleEl.contentEditable = false;
-        descEl.contentEditable  = false;
-
-        /* Nueva imagen */
-        const newImg = card.querySelector(".img-url").value.trim();
-        if (newImg) imgEl.src = newImg;
-        card.querySelector(".img-url").remove();
-
-        /* Nuevo enlace */
-        const newLink = card.querySelector(".link-url").value.trim();
-        card.querySelector(".link-url").remove();
-
-        if (newLink) {
-          /* Si ya hay <a>, actualizo href; si no, creo uno y encierro la imagen */
-          if (linkEl) {
-            linkEl.href = newLink;
+            editBtn.textContent = "✅ Guardar";
           } else {
-            linkEl = document.createElement("a");
-            linkEl.className = "card-link";
-            linkEl.href = newLink;
-            linkEl.target = "_blank";
-            imgEl.replaceWith(linkEl);
-            linkEl.appendChild(imgEl);
+            /* ---- SALIMOS DE EDICIÓN (GUARDAR) ---- */
+            titleEl.contentEditable = false;
+            descEl.contentEditable  = false;
+
+            /* Nueva imagen */
+            const newImgUrl = card.querySelector(".img-url").value.trim();
+            if (newImgUrl) imgEl.src = newImgUrl;
+            card.querySelector(".img-url").remove();
+
+            /* Nuevo enlace del recurso */
+            const newLinkUrl = card.querySelector(".link-url").value.trim();
+            card.querySelector(".link-url").remove();
+
+            const dlBtn = card.querySelector(".download-week-btn");
+
+            if (newLinkUrl) {
+              /* Crear o actualizar enlace principal */
+              if (linkEl) {
+                linkEl.href = newLinkUrl;
+              } else {
+                linkEl = document.createElement("a");
+                linkEl.className = "card-link";
+                linkEl.target = "_blank";
+                linkEl.href = newLinkUrl;
+                imgEl.replaceWith(linkEl);
+                linkEl.appendChild(imgEl);
+              }
+
+              /* Actualizar botón descargar */
+              dlBtn.href = newLinkUrl;
+              dlBtn.classList.remove("cursor-not-allowed", "bg-gray-400");
+              dlBtn.classList.add("bg-green-500", "hover:bg-green-600");
+              dlBtn.textContent = "📥 Descargar";
+
+              /* Atributo download si es archivo */
+              if (newLinkUrl.match(/\.(pdf|docx?|zip|xlsx?)$/i)) {
+                dlBtn.setAttribute("download", "");
+              } else {
+                dlBtn.removeAttribute("download");
+              }
+            } else {
+              /* Sin enlace: quitar <a> si existe, dejar la imagen sola */
+              if (linkEl) linkEl.replaceWith(imgEl);
+
+              dlBtn.href = "#";
+              dlBtn.removeAttribute("download");
+              dlBtn.classList.add("cursor-not-allowed", "bg-gray-400");
+              dlBtn.classList.remove("bg-green-500", "hover:bg-green-600");
+              dlBtn.textContent = "📥 Sin archivo";
+            }
+            editBtn.textContent = "✏️ Editar";
           }
-        } else if (linkEl) {
-          /* Si el campo quedó vacío, quito el enlace y dejo solo la imagen */
-          linkEl.replaceWith(imgEl);
-        }
+        });
+
+        /* Al salir de edición descarga 1 vez */
+        if (!editMode) downloadCurrentHTML();
+      });
+
+      /* ---------- BOTÓN DESCARGAR HTML ---------- */
+      downloadBtn.addEventListener("click", downloadCurrentHTML);
+
+      /* ---------- FUNCIÓN PARA DESCARGAR EL HTML ACTUAL ---------- */
+      function downloadCurrentHTML() {
+        const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
+        const blob = new Blob([htmlContent], { type: "text/html" });
+        const url  = URL.createObjectURL(blob);
+
+        const a = document.createElement("a");
+        a.href     = url;
+        a.download = `repositorio-${new Date().toISOString().split("T")[0]}.html`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
       }
-    });
-
-    /* Al salir de edición descargamos una sola vez */
-    if (!editMode) {
-      editBtn.textContent = "✏️ Editar";
-      downloadCurrentHTML();
-    }
-  });
-
-  /* ---------- BOTÓN DESCARGAR HTML ---------- */
-  downloadBtn.addEventListener("click", downloadCurrentHTML);
-
-  /* ---------- FUNCIÓN PARA DESCARGAR EL HTML ACTUAL ---------- */
-  function downloadCurrentHTML() {
-    const htmlContent = "<!DOCTYPE html>\n" + document.documentElement.outerHTML;
-    const blob = new Blob([htmlContent], { type: "text/html" });
-    const url  = URL.createObjectURL(blob);
-
-    const a = document.createElement("a");
-    a.href     = url;
-    a.download = `repositorio-${new Date().toISOString().split("T")[0]}.html`;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-  }
-</script>
-
-
+    </script>
+    <!-- =================== /SCRIPT =================== -->
   </body>
 </html>
